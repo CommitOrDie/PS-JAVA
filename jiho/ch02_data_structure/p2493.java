@@ -1,10 +1,12 @@
+package ch02_data_structure;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
 public class p2493 {
-    // p2493
+    // ch02_data_structure.p2493
     static class Pair {
         int idx;
         int height;

@@ -1,9 +1,11 @@
+package ch01_basics;
+
 import java.io.*;
 import java.util.*;
 
 public class p1152 {
-    // p1152
-    public void solution() throws IOException {
+    // ch1_basics.p1152
+    public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer stk = new StringTokenizer(br.readLine(), " ");
@@ -14,6 +16,6 @@ public class p1152 {
     }
 
     public static void main(String[] args) throws IOException {
-        new p1152().solution();
+        solution();
     }
 }

@@ -1,8 +1,10 @@
+package ch02_data_structure;
+
 import java.io.*;
 import java.util.*;
 
 public class p18115 {
-    // p18115
+    // ch02_data_structure.p18115
     public static void solution() throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

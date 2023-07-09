@@ -1,8 +1,10 @@
+package ch02_data_structure;
+
 import java.io.*;
 import java.util.*;
 
 public class p2800 {
-    // p2800
+    // ch02_data_structure.p2800
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static Vector<String> ans = new Vector<>();
     static Vector<Integer> selected = new Vector<>();   // 선택되어 제거될 괄호쌍 번호

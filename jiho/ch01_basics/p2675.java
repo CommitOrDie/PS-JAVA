@@ -1,8 +1,10 @@
+package ch01_basics;
+
 import java.io.*;
 import java.util.*;
 
 public class p2675 {
-     // p2675
+     // ch1_basics.p2675
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

@@ -1,8 +1,10 @@
+package ch01_basics;
+
 import java.io.*;
 import java.util.StringTokenizer;
 
 public class p8958 {
-    // p8958
+    // ch1_basics.p8958
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

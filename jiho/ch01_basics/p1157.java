@@ -1,7 +1,9 @@
+package ch01_basics;
+
 import java.io.*;
 
 public class p1157 {
-    // p1157
+    // ch1_basics.p1157
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

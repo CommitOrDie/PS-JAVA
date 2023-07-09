@@ -1,8 +1,10 @@
+package ch01_basics;
+
 import java.io.*;
 import java.util.StringTokenizer;
 
 public class p10809 {
-    // p10809
+    // ch1_basics.p10809
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stk = new StringTokenizer(br.readLine());

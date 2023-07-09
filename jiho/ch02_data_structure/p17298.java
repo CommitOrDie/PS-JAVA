@@ -1,9 +1,11 @@
+package ch02_data_structure;
+
 import java.io.*;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
 public class p17298 {
-    // p17298
+    // ch02_data_structure.p17298
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

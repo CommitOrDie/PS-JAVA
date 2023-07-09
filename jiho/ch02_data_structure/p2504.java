@@ -1,3 +1,5 @@
+package ch02_data_structure;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -5,7 +7,7 @@ import java.util.Stack;
 
 public class p2504 {
     public static void solution() throws IOException {
-        // p2504
+        // ch02_data_structure.p2504
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Stack<Character> stack = new Stack<>();
         char input[] = br.readLine().toCharArray();

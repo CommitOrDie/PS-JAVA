@@ -1,3 +1,5 @@
+package ch02_data_structure;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -5,7 +7,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class p5430 {
-    // p5430
+    // ch02_data_structure.p5430
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int t = Integer.parseInt(br.readLine());
