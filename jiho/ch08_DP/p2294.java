@@ -26,10 +26,8 @@ public class p2294 {
         for(int i = 0; i < n; i++) {
             int curCoin = coins[i];
 
+            // 현재 동전을 이용해 필요한 동전의 최소 개수를 갱신해나감
             dp[curCoin] = 1;
-            for(int j = 2; j*curCoin <= k; j++) {
-                dp[j*curCoin] = Math.min(dp[j*curCoin], dp[(j-1)*curCoin] + 1);
-            }
             for(int j = 1; j <= k; j++) {
                 if(dp[j] != INF && j+curCoin <= k) {
                     dp[j+curCoin] = Math.min(dp[j+curCoin], dp[j] + 1);
