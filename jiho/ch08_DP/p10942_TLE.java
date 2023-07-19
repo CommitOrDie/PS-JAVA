@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class p10942_TLE {
-    // p10942-TLE (O(N^3))
+    // ch08_DP.p10942-TLE (O(N^3))
     public static void solution() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
