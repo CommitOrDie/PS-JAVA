@@ -19,19 +19,16 @@ public class p2294 {
         for(int i = 0; i < n; i++) {
             coins[i] = Integer.parseInt(br.readLine());
         }
-        for(int i = 0; i <= k; i++) {
+        for(int i = 1; i <= k; i++) {
             dp[i] = INF;
         }
 
         for(int i = 0; i < n; i++) {
-            int curCoin = coins[i];
-
             // 현재 동전을 이용해 필요한 동전의 최소 개수를 갱신해나감
-            dp[curCoin] = 1;
-            for(int j = 1; j <= k; j++) {
-                if(dp[j] != INF && j+curCoin <= k) {
-                    dp[j+curCoin] = Math.min(dp[j+curCoin], dp[j] + 1);
-                }
+            int curCoin = coins[i];
+            for(int j = curCoin; j <= k; j++) {
+                // dp[0]이 0으로 초기화되어있어 dp[curCoin]은 1이 됨 
+                dp[j] = Math.min(dp[j], dp[j-curCoin] + 1);
             }
         }
 
