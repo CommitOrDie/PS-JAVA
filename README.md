@@ -43,7 +43,32 @@ static int read() throws Exception {
 (A * B) % p = ((A % p) * (B % p)) % p
 (A - B) % p = ((A % p) - (B % p) + p) % p
 ```
-
+### 입출력 시간 비교
+- with 2448
+1. BufferedWriter사용하여 o(n^2)의 출력 수행하기
+```java
+        for (int i = n-1; i >= 0; i--) {
+            for (int j = 2*n-2; j >= 0; j--) {
+                bw.write(result[i][j]+"");
+            }
+            bw.write("\n");
+        }
+        bw.flush();
+        bw.close();
+```
+2. StringBuilder + System.out.println() 사용해서 출력 수행하기
+```java
+        StringBuilder sb = new StringBuilder();
+        for (int i = n-1; i >= 0; i--) {
+            for (int j = 2*n-2; j >= 0; j--) {
+                sb.append(result[i][j]);
+            }
+            sb.append('\n');
+        }
+        System.out.println(sb);
+```
+- 메모리와 시간 비교(출력부분만 변경한것임)
+- ![image](https://github.com/CommitOrDie/PS-JAVA/assets/66842566/13631ad6-26af-47a3-a8ee-21c80f456990)
 
 
 
