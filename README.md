@@ -133,7 +133,9 @@ PriorityQueue<Integer> q = new PriorityQueue<>((o1,o2) -> o2 - o1);
 - ![image](https://github.com/CommitOrDie/PS-JAVA/assets/66842566/13631ad6-26af-47a3-a8ee-21c80f456990)
 
 
-
+---
+참고
+https://velog.io/@yul_00/AlgorithmJava-%EC%88%9C%EC%97%B4%EA%B3%BC-%EC%A1%B0%ED%95%A9
 
 
 
