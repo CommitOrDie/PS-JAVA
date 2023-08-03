@@ -6,6 +6,86 @@
   - 2206(벽부수기)
 - 재귀
   - 1629(곱셈)
+### 순열
+- N 개 중에서 M 개를 중복없이 뽑는다.
+```java
+	// 순열
+    private static void permutation(int cnt) {
+        if (cnt == m) {
+            System.out.println(Arrays.toString(arr));
+            return;
+        }
+        for (int i = 1; i <= n; i++) {
+            if (!visited[i]) {
+                visited[i] = true;
+                arr[cnt] = i;
+                permutation(cnt + 1);
+                visited[i] = false;
+            }
+        }
+    }
+    
+    // 중복 순열 - 중복 제거하는 visited를 쓰지 않음
+    private static void repeatedPermutation(int cnt) {
+        if (cnt == m) {
+            System.out.println(Arrays.toString(arr));
+            return;
+        }
+        for (int i = 1; i <= n; i++) {
+            arr[cnt] = i;
+            permutation(cnt + 1);
+        }
+    }
+```
+### 조합
+```java
+// 조합
+    private static void combination(int cnt, int start) {
+        if (cnt == m) {
+            System.out.println(Arrays.toString(arr));
+            return;
+        }
+        for (int i = start; i <= n; i++) {
+            arr[cnt] = i;
+            combination(cnt + 1, i + 1); // 오름차순으로 구하면 중복 체크하지 않아도 됨
+        }
+    }
+
+    // 중복 조합
+    private static void repeatedCombination(int cnt, int start) {
+        if (cnt == m) {
+            System.out.println(Arrays.toString(arr));
+            return;
+        }
+        for (int i = start; i <= n; i++) {
+            arr[cnt] = i;
+            combination(cnt + 1, i); // 중복 허용하니까 비내림차순
+        }
+    }
+결과
+```
+ 
+### ArrayList에 중복없이 넣는 방법
+```java
+If( list.indexOf(value) < 0 ) list.add(value);
+```
+- indexOf을 사용한다
+### 배열과 List
+```java
+//arr to list
+List list = Arrays.asList(arr);//X
+//arr to list
+List<String> list = new ArrayList<>(Arrays.asList(arr)); //이런식으로 새로 생성해야 변경전파가 안됨
+//list to arr
+ArrayList<Integer> list = new ArrayList<>();
+Integer arr[] = list.toArray(new Integer[2]);
+
+```
+### 정렬을 위한 Comparator 함수를 람다로 대체하자
+```java
+Collections.sort(arr, (a, b) -> b.cost - a.cost);
+PriorityQueue<Integer> q = new PriorityQueue<>((o1,o2) -> o2 - o1);
+```
 ### BFS의 시간복잡도, 공간복잡도 확인
 - BFS는 1번씩만 방문하므로 예를들어 rxcxh의 배열에 대해 BFS를 수행하면 시간복잡도, 공간복잡도 모두 RxCxH입니다 (공간복잡도 에서는 저만큼을 저장할 배열이 필요하기때문)
 - BFS에서는 1번씩만 방문하도록 큐에 잘 집어넣는것이 중요(중복된 값이 여러번 들어가면 시간초과와 같은 다양한 문제가 생김)
@@ -15,24 +95,6 @@
   일부 셀을 먼저 방문한 다음 벽을 부수면 더 빨리 도착하는 경로가 있을 수 있다.
 - 하나의 visit[][]만 사용한 경우 상태를 덮어쓰고 하나의 잠재적 경로를 잃을 수 있다.
 
-### 입력 100ms 빠르게 하기
-- 2206제출한 답변 보면 활용한 코드를 볼 수 있습니다
-- 그런데 보통 입력은 프로그래머스같은 경우도 parameter로 주는 경우가 많아서.. 필요할때 보도록 합시다..
-```java
-static int read() throws Exception {
-    int c, n = System.in.read() & 15; // 1. 입력 스트림에서 문자를 읽습니다. "& 15" 연산은 숫자의 ASCII 값을 실제 수치값으로 변환하기 위해 수행됩니다.
-
-    while ((c = System.in.read()) > 32) { // 2. 입력 스트림에서 다음 문자를 읽습니다. 이 문자가 공백(' '), 즉 ASCII 값이 32보다 큰 경우에만 반복문을 계속 실행합니다.
-        n = (n << 3) + (n << 1) + (c & 15); // 3. 이전에 읽은 숫자를 10배 하고, 현재 읽은 숫자를 더함으로써 새로운 숫자를 만듭니다.
-    }
-
-    if(c == 13) { // 4. 만약 현재 읽은 문자가 '\r' (ASCII 값이 13인 캐릭터)인 경우,
-        System.in.read(); // 5. '\n' 문자를 읽어서 버립니다. (윈도우 시스템에서 줄바꿈을 '\r\n'으로 표현하기 때문입니다.)
-    }
-
-    return n; // 6. 만들어진 숫자를 반환합니다.
-}
-```
 ### 큰수의 나머지를 입력하세요
 - 알고리즘 문제를 푸는 과정에서 결과 값이 매우 큰 경우, 결과 값의 나머지를 구하라는 문제가 자주 등장한다.
 - 단순히 결과 값에 모듈러 연산을 수행할 시 이미 결과 값은 너무 커져서 오버플로우가 발생한 경우가 대부분이기 때문에, 연산 과정 도중에 모듈러 연산을 적용해야 한다.
